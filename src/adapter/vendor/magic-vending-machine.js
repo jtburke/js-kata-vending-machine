@@ -1,15 +1,19 @@
 // MODIFY ME :)
 
 export default class MagicVendingMachine {
+    /** @typedef {{ name: string, qty: number, price: number }} stock */
+    /** @typedef {{ diameter: number, weight: number, thickness: number, value: number }} coin */
+
     /**
      * DO NOT CHANGE SIGNATURE
+     *
      * @param {{}} options
      * @param {Magician} options.magician
      * @param {ChangeDispenser} options.change
      * @param {Display} options.display
      * @param {ProductVendor} options.vendor
-     * @param {} options.stock
-     * @param {} options.accepts
+     * @param {Object.<string, Object.<string, stock>>} options.stock
+     * @param {coin[]} options.accepts
      */
     constructor(options) {
         this.display = options.display
