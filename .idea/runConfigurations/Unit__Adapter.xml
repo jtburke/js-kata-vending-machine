@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Unit: Adapter" type="mocha-javascript-test-runner" factoryName="Mocha" singleton="false">
+    <node-options />
+    <working-directory>$PROJECT_DIR$</working-directory>
+    <pass-parent-env>true</pass-parent-env>
+    <envs />
+    <ui>bdd</ui>
+    <extra-mocha-options>&quot;test/unit/adapter/**/*-test.js&quot; --compilers js:babel/register --require &quot;test/helpers/helper.js&quot;</extra-mocha-options>
+    <test-directory>$PROJECT_DIR$</test-directory>
+    <recursive>false</recursive>
+    <method />
+  </configuration>
+</component>
