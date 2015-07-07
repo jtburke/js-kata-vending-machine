@@ -1,13 +1,13 @@
-import Magician from '../../../../src/adapter/world/magician.js'
+import Wizard from '../../../../src/adapter/world/wizard.js'
 
-describe('Magician', () => {
+describe('Wizard', () => {
     describe('cast', () => {
         it('should output the source and the message', () => {
             const fire = sinon.stub()
-            const magician = new Magician(fire)
+            const wizard = new Wizard(fire)
             const caller = { constructor: { name: 'MyClazz'} }
 
-            magician.cast(caller, 'hello')
+            wizard.cast(caller, 'hello')
 
             fire.should.have.been.calledWith('[MyClazz] hello')
         })

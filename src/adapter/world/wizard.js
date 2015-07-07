@@ -1,6 +1,6 @@
 // DO NOT MODIFY
 
-export default class Magician {
+export default class Wizard {
     /** @param {function} fire */
     constructor(fire) {
         this.fire = fire

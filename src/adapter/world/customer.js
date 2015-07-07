@@ -1,9 +1,9 @@
 // DO NOT MODIFY
 
 export default class Customer {
-    constructor(wallet, magician) {
+    constructor(wallet, wizard) {
         this.wallet = wallet
-        this.magician = magician
+        this.wizard = wizard
     }
 
     /**
@@ -11,7 +11,7 @@ export default class Customer {
      * @param {MagicVendingMachine} vendingMachine
      */
     insert(coinName, vendingMachine) {
-        this.magician.cast(this, `Insert ${coinName} coin`)
+        this.wizard.cast(this, `Insert ${coinName} coin`)
         const coin = this.wallet.getCoin(coinName);
         vendingMachine.insert(coin)
     }
@@ -22,12 +22,12 @@ export default class Customer {
      * @param {MagicVendingMachine} vendingMachine
      */
     requestProduct(row, col, vendingMachine) {
-        this.magician.cast(this, `Request ${row}${col}`)
+        this.wizard.cast(this, `Request ${row}${col}`)
         vendingMachine.requestProduct(row, col)
     }
 
     requestChange(vendingMachine) {
-        this.magician.cast(this, 'Change requested')
+        this.wizard.cast(this, 'Change requested')
         vendingMachine.requestChange()
     }
 }

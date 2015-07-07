@@ -1,4 +1,4 @@
-import Magician from '../../src/adapter/world/magician.js'
+import Wizard from '../../src/adapter/world/wizard.js'
 import Customer from '../../src/adapter/world/customer.js'
 import Wallet from '../../src/adapter/world/wallet.js'
 import Fluctuator from '../../src/adapter/world/fluctuator.js'
@@ -8,7 +8,7 @@ import ChangeDispenser from '../../src/adapter/vendor/change-dispenser.js'
 import ProductVendor from '../../src/adapter/vendor/product-vendor.js'
 
 describe('Vending machine acceptance test', () => {
-    const DEBUGGING = true // TOGGLE TO SEE CONSOLE OUTPUT OF MAGICIAN
+    const DEBUGGING = true // TOGGLE TO SEE CONSOLE OUTPUT OF WIZARD
 
     let spells, customer, display, change, vendor, machine, clock;
 
@@ -26,20 +26,20 @@ describe('Vending machine acceptance test', () => {
             '£1':  { diameter: 22, weight: 9.5, thickness: 3.2 }
         }
 
-        const magician = new Magician((spell) => {
+        const wizard = new Wizard((spell) => {
             DEBUGGING && console.log(spell)
             spells.push(spell)
         })
         const fluctuator = new Fluctuator(() => Math.random())
-        const wallet = new Wallet(coinStandards, 0.05, fluctuator, magician)
+        const wallet = new Wallet(coinStandards, 0.05, fluctuator, wizard)
 
-        customer = new Customer(wallet, magician)
-        vendor = new ProductVendor(magician)
-        display = new Display(magician);
-        change = new ChangeDispenser(magician);
+        customer = new Customer(wallet, wizard)
+        vendor = new ProductVendor(wizard)
+        display = new Display(wizard);
+        change = new ChangeDispenser(wizard);
 
         machine = new MagicVendingMachine({
-            magician: magician,
+            wizard: wizard,
             change: change,
             display: display,
             vendor: vendor,

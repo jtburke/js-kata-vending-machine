@@ -2,10 +2,10 @@
 
 export default class ProductVendor {
     /**
-     * @param {Magician} magician
+     * @param {Wizard} wizard
      */
-    constructor(magician) {
-        this.magician = magician
+    constructor(wizard) {
+        this.wizard = wizard
     }
 
     /**
@@ -13,6 +13,6 @@ export default class ProductVendor {
      * @param {string} col
      */
     vend(row, col) {
-        this.magician.cast(this, `vend ${row}${col}`)
+        this.wizard.cast(this, `vend ${row}${col}`)
     }
 }

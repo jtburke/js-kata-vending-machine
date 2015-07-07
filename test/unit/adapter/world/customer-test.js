@@ -1,13 +1,13 @@
 import Customer from '../../../../src/adapter/world/customer.js'
 
 describe('Customer', () => {
-    let stubWallet, stubMagician, stubVendingMachine
+    let stubWallet, stubWizard, stubVendingMachine
 
     beforeEach(() => {
         stubWallet = {
             getCoin: () => {}
         }
-        stubMagician = {
+        stubWizard = {
             cast: () => {}
         }
         stubVendingMachine = {
@@ -18,9 +18,9 @@ describe('Customer', () => {
     })
 
     describe('inserting', () => {
-        it('should make the magician cast "Insert 10p coin"', () => {
-            const cast = sinon.spy(stubMagician, 'cast')
-            const customer = new Customer(stubWallet, stubMagician)
+        it('should make the wizard cast "Insert 10p coin"', () => {
+            const cast = sinon.spy(stubWizard, 'cast')
+            const customer = new Customer(stubWallet, stubWizard)
 
             customer.insert('10p', stubVendingMachine)
 
@@ -29,7 +29,7 @@ describe('Customer', () => {
 
         it('should take a coin from the wallet', () => {
             const getCoin = sinon.spy(stubWallet, 'getCoin')
-            const customer = new Customer(stubWallet, stubMagician)
+            const customer = new Customer(stubWallet, stubWizard)
 
             customer.insert('10p', stubVendingMachine)
 
@@ -38,7 +38,7 @@ describe('Customer', () => {
 
         it('should insert coin from wallet into vending machine', () => {
             const insert = sinon.spy(stubVendingMachine, 'insert')
-            const customer = new Customer(stubWallet, stubMagician)
+            const customer = new Customer(stubWallet, stubWizard)
             const coin = {}
             sinon.stub(stubWallet, 'getCoin').returns(coin)
 
@@ -49,9 +49,9 @@ describe('Customer', () => {
     })
 
     describe('request product', () => {
-        it('should make the magician cast "Request A2"', () => {
-            const cast = sinon.spy(stubMagician, 'cast')
-            const customer = new Customer(stubWallet, stubMagician)
+        it('should make the wizard cast "Request A2"', () => {
+            const cast = sinon.spy(stubWizard, 'cast')
+            const customer = new Customer(stubWallet, stubWizard)
 
             customer.requestProduct('A', '2', stubVendingMachine)
 
@@ -60,7 +60,7 @@ describe('Customer', () => {
 
         it('should make request (A, 2) from the vending machine', () => {
             const request = sinon.spy(stubVendingMachine, 'requestProduct')
-            const customer = new Customer(stubWallet, stubMagician)
+            const customer = new Customer(stubWallet, stubWizard)
 
             customer.requestProduct('A', '2', stubVendingMachine)
 
@@ -69,9 +69,9 @@ describe('Customer', () => {
     })
 
     describe('request refund', () => {
-        it('should make the magician cast "change requested"', () => {
-            const cast = sinon.spy(stubMagician, 'cast')
-            const customer = new Customer(stubWallet, stubMagician)
+        it('should make the wizard cast "change requested"', () => {
+            const cast = sinon.spy(stubWizard, 'cast')
+            const customer = new Customer(stubWallet, stubWizard)
 
             customer.requestChange(stubVendingMachine)
 
@@ -80,7 +80,7 @@ describe('Customer', () => {
 
         it('should make request refund from the vending machine', () => {
             const request = sinon.spy(stubVendingMachine, 'requestChange')
-            const customer = new Customer(stubWallet, stubMagician)
+            const customer = new Customer(stubWallet, stubWizard)
 
             customer.requestChange(stubVendingMachine)
 

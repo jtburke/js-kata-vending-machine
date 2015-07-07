@@ -1,15 +1,15 @@
 // DO NOT MODIFY
 
 export default class Display {
-    constructor(magician) {
+    constructor(wizard) {
         this.message = ''
-        this.magician = magician
+        this.wizard = wizard
     }
 
     /** @param {string} message */
     setText(message) {
         this.message = message;
-        this.magician.cast(this, `"${message}"`)
+        this.wizard.cast(this, `"${message}"`)
     }
 
     getText() {

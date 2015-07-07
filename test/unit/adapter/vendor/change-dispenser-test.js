@@ -1,16 +1,16 @@
 import ChangeDispenser from '../../../../src/adapter/vendor/change-dispenser.js'
 
 describe('Change Dispenser', () => {
-    let stubMagician
+    let stubWizard
 
     beforeEach(() => {
-        stubMagician = { cast: () => {} }
+        stubWizard = { cast: () => {} }
     })
 
     describe('dispenseRejected', () => {
-        it('should make the magician cast "hello"', () => {
-            let cast = sinon.spy(stubMagician, 'cast')
-            let change = new ChangeDispenser(stubMagician)
+        it('should make the wizard cast "hello"', () => {
+            let cast = sinon.spy(stubWizard, 'cast')
+            let change = new ChangeDispenser(stubWizard)
 
             change.dispenseRejected({
                 diameter: 1,
@@ -23,9 +23,9 @@ describe('Change Dispenser', () => {
     })
 
     describe('dispense', () => {
-        it('should make the magician cast "Dispense 120"', () => {
-            let cast = sinon.spy(stubMagician, 'cast')
-            let change = new ChangeDispenser(stubMagician)
+        it('should make the wizard cast "Dispense 120"', () => {
+            let cast = sinon.spy(stubWizard, 'cast')
+            let change = new ChangeDispenser(stubWizard)
 
             change.dispense(120)
 

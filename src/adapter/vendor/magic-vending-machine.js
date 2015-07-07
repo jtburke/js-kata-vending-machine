@@ -8,7 +8,7 @@ export default class MagicVendingMachine {
      * DO NOT CHANGE SIGNATURE
      *
      * @param {{}} options
-     * @param {Magician} options.magician
+     * @param {Wizard} options.wizard
      * @param {ChangeDispenser} options.change
      * @param {Display} options.display
      * @param {ProductVendor} options.vendor
@@ -19,7 +19,7 @@ export default class MagicVendingMachine {
         this.display = options.display
         this.change  = options.change
         this.vendor  = options.vendor
-        this.magician  = options.magician
+        this.wizard  = options.wizard
     }
 
     /**
@@ -27,7 +27,7 @@ export default class MagicVendingMachine {
      * @param {{ diameter: number, weight: number, thickness: number}} inserted
      */
     insert(inserted) {
-        this.magician.cast(this, `insert { d: ${inserted.diameter.toFixed(3)}, w: ${inserted.weight.toFixed(3)}, t: ${inserted.thickness.toFixed(3)}}`)
+        this.wizard.cast(this, `insert { d: ${inserted.diameter.toFixed(3)}, w: ${inserted.weight.toFixed(3)}, t: ${inserted.thickness.toFixed(3)}}`)
         this.change.dispenseRejected(inserted)
     }
 
@@ -37,14 +37,14 @@ export default class MagicVendingMachine {
      * @param {string} col
      */
     requestProduct(row, col) {
-        this.magician.cast(this, `product requested ${row}${col}`)
+        this.wizard.cast(this, `product requested ${row}${col}`)
     }
 
     /**
      * DO NOT CHANGE SIGNATURE
      */
     requestChange() {
-        this.magician.cast(this, 'change requested')
+        this.wizard.cast(this, 'change requested')
         this.change.dispense(120)
     }
 }

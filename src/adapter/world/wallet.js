@@ -6,13 +6,13 @@ export default class Wallet {
      * @param {Object.<string, coin>} coinStandards
      * @param {number} variance
      * @param {Fluctuator} fluctuator
-     * @param {Magician} magician
+     * @param {Wizard} wizard
      */
-    constructor(coinStandards, variance, fluctuator, magician) {
+    constructor(coinStandards, variance, fluctuator, wizard) {
         this.coinStandards = coinStandards
         this.variance = variance
         this.fluctuator = fluctuator
-        this.magician = magician
+        this.wizard = wizard
     }
 
     /**
@@ -28,7 +28,7 @@ export default class Wallet {
             thickness: this.fluctuator.fluctuate(coin.thickness, this.variance)
         }
 
-        this.magician.cast(this, `Took coin: ${coinName} { d: ${realCoin.diameter.toFixed(3)}, w: ${realCoin.weight.toFixed(3)}, t: ${realCoin.thickness.toFixed(3)} }`)
+        this.wizard.cast(this, `Took coin: ${coinName} { d: ${realCoin.diameter.toFixed(3)}, w: ${realCoin.weight.toFixed(3)}, t: ${realCoin.thickness.toFixed(3)} }`)
 
         return realCoin
     }
