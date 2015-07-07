@@ -156,7 +156,7 @@ describe('Vending machine acceptance test', () => {
                 clock.tick(2999)
                 display.getText().should.equal('THANK YOU')
                 clock.tick(1)
-                display.getText().should.not.equal('INSERT COINS')
+                display.getText().should.equal('INSERT COINS')
             })
 
             it.skip('should display a "THANK YOU" message for 3 seconds and then the remaining balance', () => {
@@ -167,7 +167,7 @@ describe('Vending machine acceptance test', () => {
                 clock.tick(2999)
                 display.getText().should.equal('THANK YOU')
                 clock.tick(1)
-                display.getText().should.not.equal('£0.25')
+                display.getText().should.equal('£0.25')
             })
 
             describe('and there is no stock left', () => {
