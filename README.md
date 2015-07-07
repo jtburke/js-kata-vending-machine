@@ -1,10 +1,6 @@
 # Vending Machine
 Implement a magical vending machine.
 
-```
-End date: Friday 17th July (2 weeks)
-```
-
 # Rules
 **No** static calls to methods  
 **No** real implementations in unit Remtests **other than the class you’re testing**  
