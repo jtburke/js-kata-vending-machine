@@ -76,6 +76,46 @@ describe('Vending machine acceptance test', () => {
     })
 
     describe('when a coin is inserted', () => {
+        it.skip('should display £0.05', () => {
+            customer.insert('5p', machine)
+
+            display.getText().should.equal('£0.05')
+        })
+
+        it.skip('should display £0.10', () => {
+            customer.insert('10p', machine)
+
+            display.getText().should.equal('£0.10')
+        })
+
+        it.skip('should display £0.20', () => {
+            customer.insert('20p', machine)
+
+            display.getText().should.equal('£0.20')
+        })
+
+        it.skip('should display £0.50', () => {
+            customer.insert('50p', machine)
+
+            display.getText().should.equal('£0.50')
+        })
+
+        it.skip('should display £1.00', () => {
+            customer.insert('£1', machine)
+
+            display.getText().should.equal('£1.00')
+        })
+
+        it.skip('should display £1.85', () => {
+            customer.insert('£1', machine)
+            customer.insert('20p', machine)
+            customer.insert('50p', machine)
+            customer.insert('10p', machine)
+            customer.insert('5p', machine)
+
+            display.getText().should.equal('£1.85')
+        })
+
         it.skip('should display £1.85', () => {
             customer.insert('£1', machine)
             customer.insert('20p', machine)
