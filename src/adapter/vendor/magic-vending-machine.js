@@ -26,7 +26,6 @@ export default class MagicVendingMachine {
      */
     insert(inserted) {
         this.wizard.cast(this, `insert { d: ${inserted.diameter.toFixed(3)}, w: ${inserted.weight.toFixed(3)}, t: ${inserted.thickness.toFixed(3)}}`)
-        this.change.dispenseRejected(inserted)
     }
 
     /**
