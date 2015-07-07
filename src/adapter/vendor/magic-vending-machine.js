@@ -5,8 +5,6 @@ export default class MagicVendingMachine {
     /** @typedef {{ diameter: number, weight: number, thickness: number, value: number }} coin */
 
     /**
-     * DO NOT CHANGE SIGNATURE
-     *
      * @param {{}} options
      * @param {Wizard} options.wizard
      * @param {ChangeDispenser} options.change

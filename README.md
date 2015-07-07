@@ -7,10 +7,9 @@ End date: Friday 17th July (2 weeks)
 
 # Rules
 **No** static calls to methods  
-**No** real implementations in tests **other than the class you’re testing**  
+**No** real implementations in unit Remtests **other than the class you’re testing**  
 **Do not** change files with ```// DO NOT MODIFY``` on first line  
 **Do not** change signature of:  
-- new MagicVendingMachine(...)  
 - MagicVendingMachine.insert(...)  
 - MagicVendingMachine.requestProduct(...)  
 - MagicVendingMachine.requestChange(...)  
